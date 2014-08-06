@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<head>
+<title>Kayte Stasny Kelly</title>
+<link href="style.css" rel="stylesheet">
+ <script src="assets/jquery-1.11.1.min.js">
+ </script>
+<script>
+$(document).ready(function(){
+	$("#carousel ul").each(function(){
+			// Set the interval to be 10 seconds
+			var t = setInterval(function(){
+				$("#carousel ul").animate({marginLeft:-480},1000,function(){
+					// This code runs after the animation completes
+					$(this).find("li:last").after($(this).find("li:first"));
+					// Now we've taken out the left-most list item, reset the margin
+					$(this).css({marginLeft:0});
+				})
+			},5000);
+		});
+	});
+</script>
+</head>
+<body>
+	<h1>I'm Kayte Kelly</h1>
+<div class="top">
+	<figure>
+		<img src="assets/hat.jpg">
+		<figcaption>I'm kindof a dork.</figcaption>
+	</figure>
+</div>
+<div class="middle">
+		<img src="assets/kayte.jpg">
+		<p>Hi, I'm Kayte! <br />
+			<small>I've worked in assorted tech jobs for many years now, primarily as a systems engineer. As a hobby, I've been making stuffed animals for friends and family. The best way to reach me is through email, kayte dot kelly at gmail dot com. </small> </p>
+</div>
+<div class="lower">
+	<figure>
+		<img src="assets/kitties.jpg">
+		<figcaption> Some of the kitties I've made recently.</figcaption>
+	</figure>
+</div>
+<div id="carousel">
+	<ul>
+		<li><img src="assets/carousel/gimlet.jpg" /></li>
+		<li><img src="assets/carousel/flame.jpg" /></li>
+		<li><img src="assets/carousel/fuzz.jpg" /></li>
+		<li><img src="assets/carousel/grumpy.jpg" /></li>
+		<li><img src="assets/carousel/socks.jpg" /></li>
+	</ul>
+</div>
+</body>
